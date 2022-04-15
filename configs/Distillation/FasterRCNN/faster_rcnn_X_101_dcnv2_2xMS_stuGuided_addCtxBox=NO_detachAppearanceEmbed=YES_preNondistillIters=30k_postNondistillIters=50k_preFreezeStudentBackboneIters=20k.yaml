@@ -1,0 +1,53 @@
+_BASE_: "../../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/FAIR/X-101-32x8d.pkl"
+  PIXEL_STD: [57.375, 57.120, 58.395]
+  MASK_ON: False
+  RESNETS:
+    STRIDE_IN_1X1: False  # this is a C2 model
+    NUM_GROUPS: 32
+    WIDTH_PER_GROUP: 8
+    DEPTH: 101 
+    DEFORM_ON_PER_STAGE: [False, True, True, True] # dcnv2
+    DEFORM_MODULATED: True # dcnv2
+  DISTILLATOR:
+    TEACHER:
+        META_ARCH: 'DynamicTeacher'
+        SOLVER:
+            OPTIMIZER: 'SGD'
+            BASE_LR: 0.02
+            MOMENTUM: 0.9
+            WEIGHT_DECAY: 1e-4
+            LR_SCHEDULER_NAME: "WarmupMultiStepLR"
+            STEPS: (120000, 160000)
+            GAMMA: 0.1
+            WARMUP_FACTOR: 1e-3
+            WARMUP_ITERS:  1e03
+            WARMUP_METHOD: "linear"
+        INTERACT_PATTERN: 'stuGuided'
+        DETACH_APPEARANCE_EMBED: True
+        ADD_CONTEXT_BOX: False
+    STUDENT:
+        META_ARCH: 'RCNNCT'
+        SOLVER:
+            OPTIMIZER: 'SGD'
+            BASE_LR: 0.02
+            MOMENTUM: 0.9
+            WEIGHT_DECAY: 1e-4
+            LR_SCHEDULER_NAME: "WarmupMultiStepLR"
+            STEPS: (120000, 160000)
+            GAMMA: 0.1
+            WARMUP_FACTOR: 1e-3
+            WARMUP_ITERS:  1e03
+            WARMUP_METHOD: "linear"
+    ADAPTER:
+        META_ARCH: 'SequentialConvs'
+    PRE_NONDISTILL_ITERS: 30000
+    POST_NONDISTILL_ITERS: 50000
+    PRE_FREEZE_STUDENT_BACKBONE_ITERS: 20000
+    LAMBDA: 1.0
+    EVAL_TEACHER: True
+SOLVER:
+  STEPS: (120000, 160000)
+  MAX_ITER: 180000
+OUTPUT_DIR: 'outputs/FasterRCNN/faster_rcnn_X_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k'
