@@ -8,6 +8,7 @@ env/
 build/
 dist/
 *.log
+*.zip
 
 # Snapshots and logs
 outputs/
