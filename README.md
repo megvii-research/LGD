@@ -78,7 +78,7 @@ This codebase is built upon [detectron2] (https://github.com/facebookresearch/de
 
 ## Usage
 ### Dataset preparation
-For instance, downloading MS-COCO (https://cocodataset.org/) whose hierarchy is organized as follows:
+For instance, downloading MS-COCO (https://cocodataset.org/) whose hierarchy is organized as follows:  
 MSCOCO  
 &ensp;&emsp;|_ annotations  
 &emsp;&emsp;&emsp;&ensp;|_ instances_train2017.json  
