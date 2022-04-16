@@ -17,14 +17,10 @@ RetinaNet
 Backbone | mAP | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|
 R-50 | 40.4 | [config](configs/Distillation/RetinaNet/retinanet_R_50_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1Tqk5n8tRMnvjSh2ezRNi24W0kX7u5t4o/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1bZSCwrJpMSgmFS2W7D2cHrUqK-h2s1bd/view?usp=sharing) |
-R-101 | 42.1 | [config](configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1OeYaAg_AEcZTnuvvmYjhVgZ-Nlw_srvb/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/16m3EGALHVWFQljkgUd1_g2JrumO8xZMx/view?usp=sharing) |
-R-101-DCN v2 | 44.5 | [config](configs/Distillation/RetinaNet/retinanet_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1mVLw3t2ERqjnbpAZXO9-sqU47jiSM1q3/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1j3zfzriHe09ki-D4UnSGEMQGfesCmkVY/view?usp=sharing) |
-X-101-DCN v2 | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_postNonDistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1JRhyU658E-MWueH-O9hWdAvRdwemKA1p/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1vKxWEKM8Dmryaf4Q5m--A52_yS_Hi1o5/view?usp=sharing) |
-Swin-Tiny | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_Swin_Tiny_3xMS_stuGuided_addCtxBox\=YES_detachAppearanceEmbed\=NO_preNondistillIters\=30k_preFreezeStudentBackboneIters\=20k.yaml) | [LINK](https://drive.google.com/file/d/17W1jDrYvQsOrxeu39muuJ3oqOrWAETys/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1W0_YNP8POzZsbMtFfJhXv2CshZCyarth/view?usp=sharing) |
+R-101 | 42.1 | [config](configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1OeYaAg_AEcZTnuvvmYjhVgZ-Nlw_srvb/view?usp=sharing) | [LINK](https://drive.google.com/file/d/16m3EGALHVWFQljkgUd1_g2JrumO8xZMx/view?usp=sharing) |
+R-101-DCN v2 | 44.5 | [config](configs/Distillation/RetinaNet/retinanet_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1mVLw3t2ERqjnbpAZXO9-sqU47jiSM1q3/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1j3zfzriHe09ki-D4UnSGEMQGfesCmkVY/view?usp=sharing) |
+X-101-DCN v2 | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_postNonDistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1JRhyU658E-MWueH-O9hWdAvRdwemKA1p/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1vKxWEKM8Dmryaf4Q5m--A52_yS_Hi1o5/view?usp=sharing) |
+Swin-Tiny | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_Swin_Tiny_3xMS_stuGuided_addCtxBox\=YES_detachAppearanceEmbed\=NO_preNondistillIters\=30k_preFreezeStudentBackboneIters\=20k.yaml) | [LINK](https://drive.google.com/file/d/17W1jDrYvQsOrxeu39muuJ3oqOrWAETys/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1W0_YNP8POzZsbMtFfJhXv2CshZCyarth/view?usp=sharing) |
 
 FCOS
 
@@ -32,29 +28,23 @@ Backbone | mAP | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|
 R-50 | 42.4 | [config](configs/Distillation/FCOS/fcos_R_50_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=NO_preNondistilIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1QH1WYM1f-ahdli-E1Av3d2HbmCDAi7Cn/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1JlRzUIXY7w1CvLCQ_mW0ZD6uvKaRUgGn/view?usp=sharing) |
 R-101 | 44.0 | [config](configs/Distillation/FCOS/fcos_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1Or6OxT0rO-SDNAyjAYPr6ZHBtVuZtdYH/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1uql08LtDbXRTGjIJZPMh40U74Bk99FdI/view?usp=sharing) |
-R-101-DCN v2 | 46.3 | [config](configs/Distillation/FCOS/fcos_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1AgYFTOCmipHB_Tu8pKZ26Jf2MuYOhgKs/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1Z06Kf92Jf1rJfCgIN7V9K2db4MUOEtvd/view?usp=sharing) |
-X-101-DCN v2 | 47.9 | [config](configs/Distillation/FCOS/fcos_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1KOsg72plN9AuiOIOCsH0F5lxdLR67Mbb/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1t21WmZ9FW_JFLoNnLpcIJQ1w9lBQZ32M/view?usp=sharing) |
+R-101-DCN v2 | 46.3 | [config](configs/Distillation/FCOS/fcos_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1AgYFTOCmipHB_Tu8pKZ26Jf2MuYOhgKs/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1Z06Kf92Jf1rJfCgIN7V9K2db4MUOEtvd/view?usp=sharing) |
+X-101-DCN v2 | 47.9 | [config](configs/Distillation/FCOS/fcos_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1KOsg72plN9AuiOIOCsH0F5lxdLR67Mbb/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1t21WmZ9FW_JFLoNnLpcIJQ1w9lBQZ32M/view?usp=sharing) |
 
 Faster R-CNN
 
 Backbone | mAP | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|
 R-50 | 40.5 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_50_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/19-E_q0BjClFqBSvGr8bmv9mIwbOT9NwD/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1up1t1fsaJx3VMMXRN4gY1EpG3j1PVOb5/view?usp=sharing) |
-R-101 | 42.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1rRcufB0vrk9vNAFun-969Vm3iaHHnWHH/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1sVvVUhLNjkr2ZsWGbwSn2EkCChaAtmPR/view?usp=sharing) |
-R-101-DCN v2 | 44.8 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1JV7Pm9TqkoTmN3Y7gpG9niK8cm32V-lT/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1fNhQ96nGbzmKK6y34DB_GbvGpi_ok3dt/view?usp=sharing) |
-X-101-DCN v2 | 46.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_X_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1_LrO3EqHqxh1nxLxARBsYd-nDoWsYsXD/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1R7e4-7krtSbmz1Ogid4jeigASOQ5xts3/view?usp=sharing) |
+R-101 | 42.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1rRcufB0vrk9vNAFun-969Vm3iaHHnWHH/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1sVvVUhLNjkr2ZsWGbwSn2EkCChaAtmPR/view?usp=sharing) |
+R-101-DCN v2 | 44.8 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1JV7Pm9TqkoTmN3Y7gpG9niK8cm32V-lT/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1fNhQ96nGbzmKK6y34DB_GbvGpi_ok3dt/view?usp=sharing) |
+X-101-DCN v2 | 46.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_X_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1_LrO3EqHqxh1nxLxARBsYd-nDoWsYsXD/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1R7e4-7krtSbmz1Ogid4jeigASOQ5xts3/view?usp=sharing) |
 
 Mask R-CNN
 
 Backbone | AP(m) | AP(b) | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|:---:|
-Swin-Tiny | 42.5 | 46.4 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1GdVUiEurBGYCFJicMEnGbOFMQ6NVgV6m/view?usp=sharing) |
-[LINK](https://drive.google.com/file/d/1OsA4r3lJUVBHnoZG_wN4gYOTHqkSulM_/view?usp=sharing) |
+Swin-Tiny | 42.5 | 46.4 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1GdVUiEurBGYCFJicMEnGbOFMQ6NVgV6m/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1OsA4r3lJUVBHnoZG_wN4gYOTHqkSulM_/view?usp=sharing) |
 
 
 
@@ -90,11 +80,11 @@ This codebase is built upon [detectron2] (https://github.com/facebookresearch/de
 ### Dataset preparation
 For instance, downloading MS-COCO (https://cocodataset.org/) whose hierarchy is organized as follows:
 MSCOCO  
-      |_ annotations  
-                    |_ instances_train2017.json  
-	            |_ instances_val2017.json  
-      |_ train2017  
-      |_ val2017  
+&ensp;&emsp;|_ annotations  
+&emsp;&emsp;&emsp;&ensp;|_ instances_train2017.json  
+&emsp;&emsp;&emsp;&ensp;|_ instances_val2017.json  
+&ensp;&emsp;|_ train2017  
+&ensp;&emsp;|_ val2017  
 
 ``` bash
 mkdir ${PROJ}/datasets
