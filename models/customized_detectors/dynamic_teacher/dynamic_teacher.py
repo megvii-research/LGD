@@ -50,7 +50,6 @@ class DynamicTeacher(nn.Module):
                     nr_fg_classes=self.num_classes,
                     add_context_box=self.add_context_box, parse_mask=self.use_seg_map)
 
-        #TODO: to check
         self.render_divide_occurence = False
         self.affine_flag = False
 

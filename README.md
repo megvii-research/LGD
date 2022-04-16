@@ -11,6 +11,7 @@ Compared with a classical teacher-based method FGFI, LGD not only performs bette
 
 ## Main Results (About MS-COCO in regular and supplementary sections) 
 Experiments are mainly conducted with 8x 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with 2 machines with total 16 2080 ti GPUs or single 8-GPUs V100 machine). Here we provide primary experimental results that detection heads with various backbones with FPN (Table 1, 12 and 13) in the paper.  We perform a code refactoring upon the primitive codes before paper submission deadline and re-run the experiments which could be well reproduced. Compared with the arXiv version of paper, there could be around 0.1 mAP difference (slightly +0.1 for the most part). lgd-pretrained models and logs are available below:
+Notes: For the usage of Swin-Tiny backbone below, you may conduct a conversion which we 've done for you and can be downloaded at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing) and put it under a manually created $pretrained_backbones$ directory.
 
 RetinaNet
 
@@ -59,17 +60,18 @@ This codebase is built upon [detectron2] (https://github.com/facebookresearch/de
 * Python>=3.6.12
 * Virtual environment via Anaconda (>=4.10.3) is recommended:
    ```bash
-   conda create -n lgd python=3.7 pip
+   conda create -n lgd python=3.7
    ```
    Activate it by
    ```bash
    conda activate lgd
    ```
 
+* detectron2==0.3
 * Pytorch>=1.7.1, torchvision>=0.8.2
 * Other requirements
   ```
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
   ```
 * Get into the LGD code directory (denoted by ${PROJ}).
   ```bash
