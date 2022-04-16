@@ -10,22 +10,41 @@ This repository is an official implementation of the AAAI 2022 paper [LGD: Label
 Compared with a classical teacher-based method FGFI, LGD not only performs better without requiring pretrained teacher but also reduces **51**% training cost beyond inherent student learning.
 
 ## Main Results (About MS-COCO in regular and supplementary sections) 
-Experiments are mainly conducted with 8 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with 2 machines with total 16 2080 ti GPUs or single 8-GPUs V100 machine). Here we provide primary experimental results in LGD paper. We perform a code refactoring upon the primitive codes before paper submission deadline and re-run the experiments which could be well reproduced. Compared with the arXiv version of paper, there could be around 0.1 mAP difference (slightly +0.1 for the most part). lgd-pretrained models and logs are available below:
+Experiments are mainly conducted with 8 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with 2 machines with total 16 2080 ti GPUs or single 8-GPUs V100 machine). Here we provide primary experimental results (Table 1, 12 and 13) in LGD paper. We perform a code refactoring upon the primitive codes before paper submission deadline and re-run the experiments which could be well reproduced. Compared with the arXiv version of paper, there could be around 0.1 mAP difference (slightly +0.1 for the most part). lgd-pretrained models and logs are available below:
 
 RetinaNet
 
 Backbone | mAP | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|
-R-50 | 40.4 | [config](configs/Distillation/RetinaNet/retinanet_R_50_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [log]() | [pretrained model]() |
-R-101 | 42.1 | [config](configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [log]() | [pretrained model]() |
-R-101-DCN v2 | 44.5 | [config](configs/Distillation/RetinaNet/retinanet_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [log]() | [pretrained model]() |
-X-101-dcn v2 | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_postNonDistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [log]() | [pretrained model]() |
-Swin-Tiny | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_Swin_Tiny_3xMS_stuGuided_addCtxBox\=YES_detachAppearanceEmbed\=NO_preNondistillIters\=30k_preFreezeStudentBackboneIters\=20k.yaml) | [log]() | [pretrained model]() |
+R-50 | 40.4 | [config](configs/Distillation/RetinaNet/retinanet_R_50_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/drive/folders/156l6Zh4JSXjqw2YY9_ambZtMQkMJGXRC?usp=sharing) | [LINK](https://drive.google.com/file/d/1bZSCwrJpMSgmFS2W7D2cHrUqK-h2s1bd/view?usp=sharing) |
+R-101 | 42.1 | [config](configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+R-101-DCN v2 | 44.5 | [config](configs/Distillation/RetinaNet/retinanet_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+X-101-DCN v2 | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_postNonDistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+Swin-Tiny | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_Swin_Tiny_3xMS_stuGuided_addCtxBox\=YES_detachAppearanceEmbed\=NO_preNondistillIters\=30k_preFreezeStudentBackboneIters\=20k.yaml) | [LINK]() | [LINK]() |
 
 FCOS
 
+Backbone | mAP | config | log | pretrained model
+--- |:---:|:---:|:---:|:---:|
+R-50 | 42.4 | [config](configs/Distillation/FCOS/fcos_R_50_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=NO_preNondistilIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+R-101 | 44.0 | [config](configs/Distillation/FCOS/fcos_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+R-101-DCN v2 | 46.3 | [config](configs/Distillation/FCOS/fcos_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+X-101-DCN v2 | 47.9 | [config](configs/Distillation/FCOS/fcos_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistilIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+
 Faster R-CNN
+
+Backbone | mAP | config | log | pretrained model
+--- |:---:|:---:|:---:|:---:|
+R-50 | 40.5 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_50_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+R-101 | 42.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+R-101-DCN v2 | 44.8 | [config](configs/Distillation/FasterRCNN/faster_rcnn_R_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+X-101-DCN v2 | 46.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_X_101_dcnv2_2xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_postNondistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
+
 Mask R-CNN
+
+Backbone | AP(m) | AP(b) | config | log | pretrained model
+--- |:---:|:---:|:---:|:---:|:---:|
+Swin-Tiny | 42.5 | 46.4 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
 
 
 
