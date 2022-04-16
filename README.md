@@ -16,7 +16,7 @@ RetinaNet
 
 Backbone | mAP | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|
-R-50 | 40.4 | [config](configs/Distillation/RetinaNet/retinanet_R_50_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/drive/folders/156l6Zh4JSXjqw2YY9_ambZtMQkMJGXRC?usp=sharing) | [LINK](https://drive.google.com/file/d/1bZSCwrJpMSgmFS2W7D2cHrUqK-h2s1bd/view?usp=sharing) |
+R-50 | 40.4 | [config](configs/Distillation/RetinaNet/retinanet_R_50_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1Tqk5n8tRMnvjSh2ezRNi24W0kX7u5t4o/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1bZSCwrJpMSgmFS2W7D2cHrUqK-h2s1bd/view?usp=sharing) |
 R-101 | 42.1 | [config](configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
 R-101-DCN v2 | 44.5 | [config](configs/Distillation/RetinaNet/retinanet_R_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
 X-101-DCN v2 | 45.9 | [config](configs/Distillation/RetinaNet/retinanet_X_101_dcnv2_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_postNonDistillIters=50k_preFreezeStudentBackboneIters=20k.yaml) | [LINK]() | [LINK]() |
