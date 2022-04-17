@@ -10,7 +10,8 @@ This is the official implementation of the AAAI 2022 paper [LGD: Label-Guided Se
 Compared with a classical teacher-based method FGFI, LGD not only performs better without requiring pretrained teacher but also reduces **51**% training cost beyond inherent student learning.
 
 ## Main Results (upon MS-COCO across regular and supplementary paper sections) 
-Experiments are mainly conducted with 8x 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with two machines with totally 16x 2080 ti GPUs or just a single 8-GPUs V100 machine). We provide results (Table 1, 12 and 13 in the arXiv version) of common detection heads with various backbones equipped with FPN. We re-run the experiments after a basic code-refactoring for higher readability. The results are consistent, with only 0.1 mAP difference (+0.1 mostly) compared to that exhibited in the arXiv version. Particularly, for the usage of Swin-Tiny backbone originally experimented under mmdetection environment in detectron2, you may conduct a conversion of its ImageNet-pretrained weights. We have done it for you and the converted weight file is available at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing). Simply create a $pretrained_backbones$ sub-directory under ${PROJ} and put the ".pth" file under it. Accompanied with the codes and results, we also release the relevant pretrained models and logs below.
+Experiments are mainly conducted with 8x 2080 ti GPUs. We provide results (Table 1, 12 and 13 in the arXiv version) of common detection heads with various backbones equipped with FPN. Particularly, for the usage of Swin-Tiny backbone originally experimented under mmdetection environment in detectron2, you may conduct a conversion of its ImageNet-pretrained weights. We have done it for you and the converted weight file is available at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing). Simply create a $pretrained_backbones$ sub-directory under ${PROJ} and put the ".pth" file under it. 
+We re-run the experiments after a basic code-refactoring for higher readability. The results are consistent, with only 0.1 mAP difference (+0.1 mostly) compared to that exhibited in the arXiv version. Accompanied with the codes and results, we also release the relevant pretrained models and logs below.  
 
 RetinaNet
 
@@ -45,9 +46,6 @@ Mask R-CNN
 Backbone | mAP(box) | mAP(mask) | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|:---:|
 Swin-Tiny | 46.4 | 42.5 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1GdVUiEurBGYCFJicMEnGbOFMQ6NVgV6m/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1OsA4r3lJUVBHnoZG_wN4gYOTHqkSulM_/view?usp=sharing) |
-
-
-
 
 ## Installation
 
@@ -94,13 +92,32 @@ ln -s /path/to/MSCOCO datasets/coco
 
 ### Training
 
+#### Single Machine
 ```bash
 python3 train.py --config-file ${CONFIG} --num-gpus ${NUM_GPUS} --resume
 ```
-e.g. when it comes to RetinaNet R-101 2xMS on 8 gpu cards' setting. It looks like:
+Notes: We normally use 8 gpus at once for each experiment and that means ${NUM_GPUS}=8. 
+
+#### Multiple Machine
+
+For experiments with backbone Swin-Tiny that are proned to be OOM, we opt for built-in distributed training with two machines supported by Pytorch or just a single 8-GPUs machine with larger GPU memory (V100, etc). Below simply showcase a double machine usage.
+
+(1) set the NCCL environment variables on both nodes
 ```bash
-python3 train.py --config-file configs/Distillation/RetinaNet/retinanet_R_101_2xMS_stuGuided_addCtxBox=YES_detachAppearanceEmbed=NO_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml --num-gpus 8 --resume
+export NCCL_IB_DISABLE=1
+export NCCL_SOCKET_IFNAME=ib0
+export NCCL_TREE_THRESHOLD=0
+export GLOO_SOCKET_IFNAME=ib0
 ```
+(2) training scripts
+```bash
+python3 train.py --num-machines 2 --machine-rank 0 --num-gpus ${NUM_GPUS} --resume --config-file ${CONFIG}
+```
+Running above command in the master node and get the tcp address from the screen log, we could then type below script in another machine:
+```bash
+python3 train.py --num-machines 2 --machine-rank 1 --num-gpus ${NUM_GPUS} --resume --dist-url ${TCP_ADDRESS} --config-file ${CONFIG}
+```
+
 
 ### Evaluation
 It is handy to add [--eval-only] option to turn training command into evaluation usage.
