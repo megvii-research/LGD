@@ -1,6 +1,6 @@
 # LGD: Label-Guided Self-Distillation for Object Detection
 
-This repository is an official implementation of the AAAI 2022 paper [LGD: Label-Guided Self-Distillation for Object Detection]
+This is the official implementation of the AAAI 2022 paper [LGD: Label-Guided Self-Distillation for Object Detection]
 (https://arxiv.org/abs/2109.11496)
 
 ## Introduction
@@ -9,9 +9,9 @@ This repository is an official implementation of the AAAI 2022 paper [LGD: Label
 **Abstract.** In this paper, we propose the first self-distillation framework for general object detection, termed LGD (**L**abel-**G**uided self-**D**istillation). Previous studies rely on a strong pretrained teacher to provide instructive knowledge that could be unavailable in real-world scenarios. Instead, we generate an instructive knowledge by inter-and-intra relation modeling among objects, requiring only student representations and regular labels. Concretely, our framework involves sparse label-appearance encoding, inter-object relation adaptation and intra-object knowledge mapping to obtain the instructive knowledge. They jointly form an implicit teacher at training phase, dynamically dependent on labels and evolving student representations. Modules in LGD are trained end-to-end with student detector and are discarded in inference. Experimentally, LGD obtains decent results on various detectors, datasets, and extensive tasks like instance segmentation. For example in MS-COCO dataset, LGD improves RetinaNet with ResNet-50 under 2x single-scale training from 36.2% to 39.0% mAP (+ **2.8**%). It boosts much stronger detectors like FCOS with ResNeXt-101 DCN v2 under 2x multi-scale training from 46.1% to 47.9% (+ **1.8**%).
 Compared with a classical teacher-based method FGFI, LGD not only performs better without requiring pretrained teacher but also reduces **51**% training cost beyond inherent student learning.
 
-## Main Results (About MS-COCO in regular and supplementary sections) 
-Experiments are mainly conducted with 8x 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with 2 machines with total 16 2080 ti GPUs or single 8-GPUs V100 machine). Here we provide primary experimental results that detection heads with various backbones with FPN (Table 1, 12 and 13) in the paper.  We perform a code refactoring upon the primitive codes before paper submission deadline and re-run the experiments which could be well reproduced. Compared with the arXiv version of paper, there could be around 0.1 mAP difference (slightly +0.1 for the most part). lgd-pretrained models and logs are available below:
-Notes: For the usage of Swin-Tiny backbone below, you may conduct a conversion which we 've done for you and can be downloaded at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing) and put it under a manually created $pretrained_backbones$ sub-directory.
+## Main Results (upon MS-COCO across regular and supplementary paper sections) 
+Experiments are mainly conducted with 8x 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with two machines with totally 16x 2080 ti GPUs or just a single 8-GPUs V100 machine). We provide results (Table 1, 12 and 13 in the arXiv version) of common detection heads with various backbones equipped with FPN. We re-run the experiments after a basic code-refactoring for higher readability. The results are stable, with only $pm0.1$ mAP difference (+0.1 mostly) compared to the arXiv paper of exhibitation. We also release the relevant pretrained models and logs during training:
+Notes: For the usage of Swin-Tiny backbone originally experimented under mmdetection environment in detectron2, you may conduct a conversion of its ImageNet-pretrained weights which we 've done for you. It is available at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing). Just create a $pretrained_backbones$ sub-directory and put the .pth weight file under it.
 
 RetinaNet
 
