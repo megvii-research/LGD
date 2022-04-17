@@ -11,7 +11,7 @@ Compared with a classical teacher-based method FGFI, LGD not only performs bette
 
 ## Main Results (About MS-COCO in regular and supplementary sections) 
 Experiments are mainly conducted with 8x 2080 ti GPUs (For experiments like with backbone Swin-Tiny that are proned to be OOM, we opt for distributed training with 2 machines with total 16 2080 ti GPUs or single 8-GPUs V100 machine). Here we provide primary experimental results that detection heads with various backbones with FPN (Table 1, 12 and 13) in the paper.  We perform a code refactoring upon the primitive codes before paper submission deadline and re-run the experiments which could be well reproduced. Compared with the arXiv version of paper, there could be around 0.1 mAP difference (slightly +0.1 for the most part). lgd-pretrained models and logs are available below:
-Notes: For the usage of Swin-Tiny backbone below, you may conduct a conversion which we 've done for you and can be downloaded at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing) and put it under a manually created $pretrained_backbones$ directory.
+Notes: For the usage of Swin-Tiny backbone below, you may conduct a conversion which we 've done for you and can be downloaded at [LINK](https://drive.google.com/file/d/1tYE_2R-FQUorsJF6j8OD_lr8TuRJFADC/view?usp=sharing) and put it under a manually created $pretrained_backbones$ sub-directory.
 
 RetinaNet
 
@@ -43,9 +43,9 @@ X-101-DCN v2 | 46.2 | [config](configs/Distillation/FasterRCNN/faster_rcnn_X_101
 
 Mask R-CNN
 
-Backbone | AP(m) | AP(b) | config | log | pretrained model
+Backbone | mAP(box) | mAP(mask) | config | log | pretrained model
 --- |:---:|:---:|:---:|:---:|:---:|
-Swin-Tiny | 42.5 | 46.4 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1GdVUiEurBGYCFJicMEnGbOFMQ6NVgV6m/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1OsA4r3lJUVBHnoZG_wN4gYOTHqkSulM_/view?usp=sharing) |
+Swin-Tiny | 46.4 | 42.5 | [config](configs/Distillation/MaskRCNN/mask_rcnn_Swin_Tiny_3xMS_stuGuided_addCtxBox=NO_detachAppearanceEmbed=YES_preNondistillIters=30k_preFreezeStudentBackboneIters=20k.yaml) | [LINK](https://drive.google.com/file/d/1GdVUiEurBGYCFJicMEnGbOFMQ6NVgV6m/view?usp=sharing) | [LINK](https://drive.google.com/file/d/1OsA4r3lJUVBHnoZG_wN4gYOTHqkSulM_/view?usp=sharing) |
 
 
 
