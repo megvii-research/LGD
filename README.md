@@ -133,7 +133,7 @@ python3 train.py --eval-only --config-file ${CONFIG} MODEL.WEIGHTS ${SNAPSHOT} M
 This repository adopts well-developed components (esp. detection head modules and backbone layers) from Detectron2. For more details about official detectron2, please check [DETECTRON2](https://github.com/facebookresearch/detectron2/blob/master/README.md). We also refer to cvpods' implementation of FCOS, ATSS and POTO [cvpods](https://github.com/Megvii-BaseDetection/cvpods/edit/master/README.md). For Detectron2-based Swin-Transformer backbone's implementation, we adopt modules from a third party implementation by Hu Ye (https://github.com/xiaohu2015/SwinT_detectron2/blob/main/README.md).
 
 ## Citing LGD
-If you find this program useful for your research or project, feel free to cite us.
+If you find these useful for your research or project, feel free to cite our paper beneath.
 ```bibtex
 @article{zhang2021lgd,
   title={LGD: Label-guided Self-distillation for Object Detection},
